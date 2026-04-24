@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>경험자산 번역기 | 강의 시연용 MVP</title>
+  <meta name="description" content="작은 관심사와 경험을 직무언어로 바꿔보는 강의 시연용 웹사이트" />
+  <style>
+    :root{
+      --orange:#f97316;--orange-dark:#c2410c;--orange-soft:#fff7ed;--ink:#172033;--muted:#64748b;--line:#fed7aa;--card:#ffffff;--slate:#f8fafc;
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(135deg,#fff7ed 0%,#ffedd5 45%,#fff 100%);color:var(--ink)}
+    .wrap{max-width:1180px;margin:0 auto;padding:32px 18px 60px}.badge{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);color:var(--orange-dark);border-radius:999px;padding:8px 14px;font-weight:800;font-size:14px;box-shadow:0 8px 22px rgba(249,115,22,.08)}
+    header{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:end;margin-bottom:24px}h1{font-size:clamp(38px,6vw,70px);line-height:1.02;margin:18px 0 12px;letter-spacing:-.06em}.orange{color:var(--orange)}.lead{font-size:19px;line-height:1.8;color:#334155;max-width:780px;margin:0}.notice{background:rgba(255,255,255,.84);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:0 12px 30px rgba(15,23,42,.06);line-height:1.65;color:#475569}.notice strong{color:var(--orange-dark)}
+    .grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:20px}.stack{display:grid;gap:18px}.card{background:rgba(255,255,255,.92);border:1px solid rgba(254,215,170,.9);border-radius:28px;padding:22px;box-shadow:0 12px 30px rgba(15,23,42,.06)}.card h2{font-size:22px;margin:0 0 14px}.sub{color:var(--muted);font-size:14px;line-height:1.55;margin:0 0 14px}textarea{width:100%;min-height:156px;resize:vertical;border:1px solid var(--line);background:#fff7ed;border-radius:20px;padding:16px;font-size:16px;line-height:1.7;color:var(--ink);outline:none}textarea:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(249,115,22,.12)}button{font-family:inherit}.sample{width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:16px;padding:11px 12px;margin-top:8px;color:#475569;cursor:pointer}.sample:hover{background:#fff7ed;border-color:#fb923c}.chips{display:flex;flex-wrap:wrap;gap:9px}.chip{border:0;border-radius:999px;padding:10px 14px;background:#ffedd5;color:#9a3412;font-weight:800;cursor:pointer}.chip.active{background:var(--orange);color:white;box-shadow:0 8px 18px rgba(249,115,22,.25)}.tone{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.tone button{border:0;border-radius:18px;padding:13px 8px;font-weight:900;cursor:pointer;background:#f1f5f9;color:#475569}.tone button.active{background:#111827;color:#fff}.toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}.btns{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid #cbd5e1;background:white;color:#334155;border-radius:16px;padding:10px 13px;font-weight:800;cursor:pointer}.btn:hover{background:#f8fafc}.boxgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.ibox{background:#fff7ed;border-radius:20px;padding:15px}.ibox.gray{background:#f8fafc}.label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--orange-dark);font-weight:900;margin-bottom:7px}.ibox.gray .label{color:#64748b}.ibox p{margin:0;line-height:1.65;color:#334155}.ibox ul{margin:0;padding-left:18px;line-height:1.8;color:#334155}.result{margin-top:16px}.jobcard{background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:18px;margin-top:14px}.jobtop{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.pill{border-radius:999px;padding:6px 11px;font-size:13px;font-weight:900}.pill.main{background:var(--orange);color:#fff}.pill.group{background:#f1f5f9;color:#475569}.jobdesc{color:#64748b;line-height:1.6;font-size:14px}.keywords{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.kw{font-size:12px;font-weight:800;color:#9a3412;background:#ffedd5;border-radius:999px;padding:6px 9px}.sentence{background:#f8fafc;border-radius:18px;padding:16px;line-height:1.75}.source{margin-top:12px;background:#fff7ed;border:1px solid var(--line);border-radius:16px;padding:12px;font-size:12px;color:#64748b;line-height:1.65}.empty{text-align:center;color:#64748b;padding:28px;border:1px dashed #fdba74;border-radius:24px;background:rgba(255,255,255,.68)}footer{margin-top:24px}.script{line-height:1.85;color:#334155;background:#fff;border:1px solid var(--line);border-radius:26px;padding:20px}.mini{font-size:12px;color:#64748b;margin-top:10px;line-height:1.65}
+    @media(max-width:900px){header,.grid{grid-template-columns:1fr}.boxgrid{grid-template-columns:1fr}.tone{grid-template-columns:1fr}h1{font-size:44px}.toolbar{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <section>
+        <div class="badge">✨ 강의 시연용 MVP</div>
+        <h1>경험자산 <span class="orange">번역기</span></h1>
+        <p class="lead">작은 관심사와 경험을 입력하면, 관심 직무와 플랜B 직무에 맞춰 <strong>경험 → 관점 → 행동 → 역량 → 직무언어</strong>로 구조화합니다.</p>
+      </section>
+      <aside class="notice"><strong>검증 안내</strong><br/>현재는 강의 테스트용 내장 DB입니다. 실제 서비스 버전에서는 NCS 직무용어와 국내 대기업 채용공고 원문 URL을 연결해 검증 출처를 표시합니다.</aside>
+    </header>
+
+    <main class="grid">
+      <section class="stack">
+        <div class="card">
+          <h2>1. 내 경험 입력</h2>
+          <textarea id="experience" placeholder="예: 카페를 자주 다니며 블로그에 기록했다 / 교육장 장비를 점검했다 / 아르바이트 고객응대를 했다"></textarea>
+          <p class="sub" style="margin-top:14px;font-weight:800">예시로 테스트하기</p>
+          <div id="samples"></div>
+        </div>
+        <div class="card">
+          <h2>2. 관심 직무 선택</h2>
+          <p class="sub">최대 3개까지 선택됩니다. 1지망 + 플랜B 직무를 함께 고르면 시연 효과가 좋습니다.</p>
+          <div id="jobs" class="chips"></div>
+        </div>
+        <div class="card">
+          <h2>3. 결과 형식</h2>
+          <div class="tone" id="tones"></div>
+        </div>
+      </section>
+
+      <section class="stack">
+        <div class="card">
+          <div class="toolbar">
+            <h2 style="margin:0">경험자산 분해 결과</h2>
+            <div class="btns"><button class="btn" id="copyBtn">결과 복사</button><button class="btn" id="resetBtn">초기화</button></div>
+          </div>
+          <div class="boxgrid">
+            <div class="ibox"><div class="label">경험</div><p id="expOut"></p></div>
+            <div class="ibox"><div class="label">관점</div><p id="viewOut"></p></div>
+            <div class="ibox gray"><div class="label">행동</div><ul id="actionOut"></ul></div>
+            <div class="ibox gray"><div class="label">역량</div><ul id="strengthOut"></ul></div>
+          </div>
+        </div>
+        <div id="results"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="script"><strong>강의 진행 멘트</strong><br/>“지금부터 여러분의 작은 경험을 직무언어로 바꿔보겠습니다. 중요한 것은 거창한 경험이 아닙니다. 아르바이트, 취미, SNS, 동아리, 교육 운영 경험도 구조화하면 직무역량으로 연결될 수 있습니다. 오늘은 이 도구를 통해 내 경험이 어떤 직무언어로 바뀌는지 확인해보겠습니다.”</div>
+      <p class="mini">이 결과는 자기소개서 작성 전 사고 훈련용 초안입니다. 실제 제출 전에는 지원 기업의 채용공고, 직무소개, NCS 직무기술서를 기준으로 검토하세요.</p>
+    </footer>
+  </div>
+
+<script>
+const JOB_DB={"인사총무":{group:"HRM/운영",keywords:["인사행정","구성원 지원","문서관리","제도 운영","업무지원"],description:"인사·총무 업무 전반을 지원하며 구성원 경험과 조직 운영 안정성을 높이는 직무",sourceType:"NCS 기반 직무용어 + 기업 채용공고 확장 예정"},"HRBP":{group:"HRM/전략",keywords:["현업 지원","조직 이슈 파악","인사제도 연계","구성원 경험","비즈니스 파트너십"],description:"현업 조직의 목표와 구성원 이슈를 이해하고 인사 전략과 실행을 연결하는 직무",sourceType:"기업 직무소개/채용공고 확장 예정"},"채용어시스턴트":{group:"채용운영",keywords:["지원자 안내","면접 일정 조율","채용 데이터 정리","커뮤니케이션","운영 보조"],description:"채용 프로세스가 원활히 진행되도록 지원자와 면접 운영을 지원하는 직무",sourceType:"채용공고 기반 표현 확장 예정"},"채용":{group:"채용/TA",keywords:["인재 확보","채용 브랜딩","지원자 경험","직무 이해","선발 프로세스"],description:"조직에 필요한 인재를 발굴하고 선발 과정과 지원자 경험을 설계하는 직무",sourceType:"NCS 인력채용 + 기업 채용공고 확장 예정"},"사내강사":{group:"HRD/강의",keywords:["지식 전달","학습자 이해","강의 운영","피드백","콘텐츠 전달력"],description:"사내 구성원에게 필요한 지식과 경험을 교육 콘텐츠로 전달하는 역할",sourceType:"HRD 직무표현 확장 예정"},"조직문화담당":{group:"조직문화",keywords:["구성원 소통","참여 경험","핵심가치 내재화","조직 진단","문화 프로그램"],description:"구성원의 몰입과 협업을 높이기 위해 조직문화 활동과 커뮤니케이션을 설계하는 직무",sourceType:"NCS 조직문화관리 + 기업 직무소개 확장 예정"},"교육":{group:"HRD/교육운영",keywords:["교육과정 운영","학습자 관리","교육 콘텐츠","운영 안정화","성과 관리"],description:"학습자의 성장과 조직 역량 향상을 위해 교육과정을 기획·운영하는 직무",sourceType:"NCS 교육훈련운영 + 기업 직무소개 확장 예정"},"핵심가치강사":{group:"조직문화/강의",keywords:["핵심가치 전달","가치 내재화","스토리텔링","참여형 교육","문화 확산"],description:"조직의 핵심가치를 구성원이 이해하고 행동으로 연결하도록 돕는 강의 역할",sourceType:"기업 조직문화/가치교육 표현 확장 예정"},"총무":{group:"총무/운영",keywords:["공간 운영","자산 관리","비품 관리","행사 지원","업무환경 개선"],description:"업무 환경, 공간, 자산, 행사 운영을 통해 조직의 일상적 운영 기반을 지원하는 직무",sourceType:"NCS 총무관리 + 기업 채용공고 확장 예정"},"성과보상담당":{group:"HRM/보상",keywords:["보상제도","성과관리","임금관리","데이터 분석","제도 개선"],description:"성과와 보상을 공정하게 연결하고 제도 운영과 개선을 담당하는 직무",sourceType:"NCS 임금관리/성과관리 + 채용공고 확장 예정"},"평가담당":{group:"HRM/평가",keywords:["인사평가","성과 기준","평가 프로세스","공정성","피드백"],description:"구성원의 성과와 역량을 평가하는 기준과 프로세스를 운영하는 직무",sourceType:"NCS 인사평가 + 기업 채용공고 확장 예정"},"복지담당":{group:"HRM/복지",keywords:["복리후생","구성원 경험","복지제도","만족도","운영 관리"],description:"구성원의 일과 삶을 지원하는 복지제도와 경험을 기획·운영하는 직무",sourceType:"기업 복지/인사운영 채용공고 확장 예정"}};
+const PATTERNS=[{match:["카페","공간","블로그","인스타","sns","사진","기록"],experience:"관심 공간과 경험을 관찰하고 콘텐츠로 기록한 활동",perspective:"사람들이 머무는 공간과 정보 표현 방식이 경험의 질을 바꾼다는 관점",actions:["공간 분위기와 고객 동선을 관찰함","사진과 글로 특징을 정리함","반응과 댓글을 통해 관심 포인트를 확인함"],strengths:["관찰력","콘텐츠 기획력","고객경험 이해","꾸준한 발행력"]},{match:["아르바이트","고객","응대","매장","서비스","민원"],experience:"현장에서 고객을 응대하고 반복 업무를 수행한 경험",perspective:"작은 응대와 운영 흐름이 고객 경험과 신뢰에 영향을 준다는 관점",actions:["고객 문의를 확인하고 응대함","반복 업무를 안정적으로 수행함","현장 상황에 맞춰 우선순위를 조정함"],strengths:["고객지향","책임감","상황대응력","운영 지속성"]},{match:["교육","강의","알려","설명","튜터","스터디","노션","엑셀"],experience:"타인에게 지식이나 사용법을 설명하고 학습을 도운 경험",perspective:"상대의 이해 수준에 맞춰 정보를 재구성해야 학습 효과가 높아진다는 관점",actions:["복잡한 내용을 쉽게 풀어 설명함","질문을 확인하며 보완 설명을 제공함","자료나 예시를 정리해 전달함"],strengths:["전달력","학습자 이해","정보 구조화","서포트 역량"]},{match:["동아리","행사","프로젝트","모임","운영","조율","일정"],experience:"여러 사람과 함께 일정, 역할, 현장 운영을 조율한 경험",perspective:"협업은 역할 분담과 일정 조율, 현장 변수 대응이 함께 작동해야 완성된다는 관점",actions:["참여자와 역할을 조율함","일정과 진행 상황을 확인함","돌발상황에 맞춰 대안을 찾음"],strengths:["커뮤니케이션","문제해결력","운영관리","협업 조율"]},{match:["출결","장비","교육장","공간","전원","프로젝터","시건","문","에어컨"],experience:"교육 공간과 장비를 점검하며 안정적인 운영을 지원한 경험",perspective:"수업 전 보이지 않는 작은 변수도 교육 품질에 영향을 준다는 관점",actions:["공간과 장비 상태를 사전 점검함","전원·냉난방·시건장치를 확인함","교육생과 강사가 집중할 수 있는 환경을 관리함"],strengths:["꼼꼼함","리스크 예방","운영 안정화","책임감"]}];
+const DEFAULT={experience:"사용자가 입력한 활동을 바탕으로 한 경험자산",perspective:"작은 활동도 반복·관찰·기록을 통해 직무역량으로 전환될 수 있다는 관점",actions:["경험을 구체적으로 기록함","반복적으로 수행한 행동을 정리함","관심 직무와 연결되는 표현을 찾음"],strengths:["성실성","관찰력","정보 정리력","실행력"]};
+const samples=["카페를 자주 다니며 블로그와 SNS에 공간 분위기, 메뉴, 고객 반응을 기록했습니다.","교육장 1층과 4층을 오가며 컴퓨터, 빔프로젝터, 에어컨, 시건장치를 점검했습니다.","아르바이트를 하며 고객 문의에 응대하고 매장 상황에 맞춰 업무를 처리했습니다.","친구들에게 노션과 엑셀 사용법을 알려주고, 이해하기 쉽게 자료를 정리했습니다.","동아리 행사에서 일정과 역할을 조율하고 현장 운영을 도왔습니다."];
+let selectedJobs=["교육","조직문화담당"], tone="자기소개서";
+const $=id=>document.getElementById(id); const expEl=$("experience"); expEl.value=samples[0];
+function analyze(text){const n=text.toLowerCase();const scored=PATTERNS.map(p=>({...p,score:p.match.reduce((a,k)=>a+(n.includes(k.toLowerCase())?1:0),0)})).sort((a,b)=>b.score-a.score);return scored[0]&&scored[0].score>0?scored[0]:DEFAULT}
+function makeSentence(job,info,a,t){const action=a.actions.slice(0,2).join(" 또한 ");const strength=a.strengths.slice(0,3).join(", ");const kws=info.keywords.slice(0,3).join(", ");if(t==="면접답변")return `저는 ${a.experience}을 통해 ${strength}을 키웠습니다. 특히 ${action}. 이 경험은 ${job} 직무에서 요구되는 ${kws}와 연결될 수 있으며, 현장의 작은 단서를 놓치지 않고 실행으로 옮기는 방식으로 기여하고 싶습니다.`;if(t==="포트폴리오")return `${a.experience}을 기반으로 ${strength}을 축적했습니다. ${a.perspective}을 가지고 ${action}. 이는 ${job} 직무의 ${kws} 역량과 연결되며, 실무에서는 경험 관찰 → 정보 정리 → 실행 지원의 흐름으로 활용될 수 있습니다.`;return `저는 ${a.experience}을 통해 ${strength}을 키워왔습니다. ${a.perspective}을 바탕으로 ${action}. 이러한 경험은 ${job} 직무에서 요구되는 ${kws} 역량과 연결될 수 있으며, 구성원과 조직의 경험을 더 안정적으로 지원하는 데 기여할 수 있습니다.`}
+function renderSamples(){samples.forEach((s,i)=>{const b=document.createElement("button");b.className="sample";b.textContent=`${i+1}. ${s}`;b.onclick=()=>{expEl.value=s;render()};$("samples").appendChild(b)})}
+function renderJobs(){const jobs=$("jobs");jobs.innerHTML="";Object.keys(JOB_DB).forEach(j=>{const b=document.createElement("button");b.className="chip"+(selectedJobs.includes(j)?" active":"");b.textContent="#"+j;b.onclick=()=>{if(selectedJobs.includes(j)) selectedJobs=selectedJobs.filter(x=>x!==j); else { if(selectedJobs.length>=3) selectedJobs=[selectedJobs[1],selectedJobs[2],j].filter(Boolean); else selectedJobs.push(j)} render()};jobs.appendChild(b)})}
+function renderTones(){const box=$("tones");box.innerHTML="";["자기소개서","면접답변","포트폴리오"].forEach(t=>{const b=document.createElement("button");b.className=tone===t?"active":"";b.textContent=t;b.onclick=()=>{tone=t;render()};box.appendChild(b)})}
+function list(el,arr){el.innerHTML="";arr.forEach(x=>{const li=document.createElement("li");li.textContent=x;el.appendChild(li)})}
+function render(){const a=analyze(expEl.value);$("expOut").textContent=a.experience;$("viewOut").textContent=a.perspective;list($("actionOut"),a.actions);list($("strengthOut"),a.strengths);renderJobs();renderTones();const out=$("results");out.innerHTML="";if(selectedJobs.length===0){out.innerHTML='<div class="empty">관심 직무를 1개 이상 선택하면 직무언어 변환 결과가 표시됩니다.</div>';return}selectedJobs.forEach(j=>{const info=JOB_DB[j], sent=makeSentence(j,info,a,tone);const div=document.createElement("div");div.className="jobcard";div.innerHTML=`<div class="jobtop"><span class="pill main">${j}</span><span class="pill group">${info.group}</span></div><div class="jobdesc">${info.description}</div><div class="keywords">${info.keywords.map(k=>`<span class="kw">${k}</span>`).join("")}</div><div class="sentence"><strong>직무언어 변환 문장 → ${tone}</strong><br/>${sent}</div><div class="source"><strong>출처 상태:</strong> ${info.sourceType}<br/>실제 제출 전에는 지원 기업의 채용공고, 직무소개, NCS 직무기술서를 기준으로 표현을 검토해야 합니다.</div>`;out.appendChild(div)})}
+expEl.addEventListener("input",render);$("resetBtn").onclick=()=>{expEl.value="";selectedJobs=[];tone="자기소개서";render()};$("copyBtn").onclick=async()=>{const a=analyze(expEl.value);const text=selectedJobs.map(j=>{const info=JOB_DB[j];return `[${j}]\n${makeSentence(j,info,a,tone)}\n근거 키워드: ${info.keywords.join(", ")}\n출처상태: ${info.sourceType}`}).join("\n\n");await navigator.clipboard.writeText(text);$("copyBtn").textContent="복사됨";setTimeout(()=>$("copyBtn").textContent="결과 복사",1600)};
+renderSamples();render();
+</script>
+</body>
+</html>
