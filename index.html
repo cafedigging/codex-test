@@ -3,76 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cafe Picks</title>
+    <title>Goldfish Water Garden</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="hero">
-      <div class="hero__content container">
-        <p class="hero__tag">TODAY'S RECOMMENDATION</p>
-        <h1>Find your next favorite cafe in Seoul</h1>
-        <p class="hero__desc">
-          Curated spots with great coffee, interior vibes, and easy accessibility.
-        </p>
-      </div>
-    </header>
+    <main class="app">
+      <header class="topbar ui-fade">
+        <h1>🐟 Goldfish Water Garden</h1>
+        <div class="happiness-wrap" aria-label="Fish happiness meter">
+          <span>Happiness</span>
+          <div class="meter"><div id="happiness-fill"></div></div>
+        </div>
+      </header>
 
-    <main class="container main-layout">
-      <section class="cards" aria-label="Cafe recommendations">
-        <article class="card" data-lat="37.5728" data-lng="126.9794" data-name="Blue Lane Coffee">
-          <div class="card__badge">Specialty</div>
-          <h2>Blue Lane Coffee</h2>
-          <p class="card__meta">Jongno-gu · 8:00 AM - 9:00 PM</p>
-          <p class="card__description">
-            Signature hand drip menu, bright natural light, and calm seating for reading.
-          </p>
-          <button class="card__button" type="button">Show on map</button>
-        </article>
+      <section id="mission-card" class="mission-card ui-fade" aria-live="polite"></section>
 
-        <article class="card" data-lat="37.5550" data-lng="126.9236" data-name="Forest Table Cafe">
-          <div class="card__badge">Brunch</div>
-          <h2>Forest Table Cafe</h2>
-          <p class="card__meta">Mapo-gu · 10:00 AM - 10:00 PM</p>
-          <p class="card__description">
-            Cozy wood-tone interior, soft jazz playlist, and popular cream latte.
-          </p>
-          <button class="card__button" type="button">Show on map</button>
-        </article>
-
-        <article class="card" data-lat="37.5184" data-lng="127.0230" data-name="Moonlight Roasters">
-          <div class="card__badge">Dessert</div>
-          <h2>Moonlight Roasters</h2>
-          <p class="card__meta">Gangnam-gu · 9:00 AM - 11:00 PM</p>
-          <p class="card__description">
-            Trendy rooftop view, rich espresso blends, and handmade tiramisu.
-          </p>
-          <button class="card__button" type="button">Show on map</button>
-        </article>
+      <section id="scene-rescue" class="scene active" aria-label="Alley Stream Rescue Scene">
+        <div class="scene-title">1) Alley Stream Rescue</div>
+        <p class="scene-text">A tiny goldfish is gently drifting near the stream edge. Move your net and tap/click to rescue it.</p>
+        <div id="stream" class="stream-area">
+          <div class="stream-water"></div>
+          <div id="stream-fish" class="stream-fish" aria-label="Lost goldfish"></div>
+          <div id="net" class="net" aria-label="Rescue net"></div>
+          <div class="leaf leaf-a"></div>
+          <div class="leaf leaf-b"></div>
+        </div>
       </section>
 
-      <section class="map" aria-label="Map section">
-        <div class="map__head">
-          <h2>Simple Map</h2>
-          <p id="selected-cafe">Selected: Blue Lane Coffee</p>
+      <section id="scene-transition" class="scene" aria-label="Bring Goldfish Home Transition">
+        <div class="scene-title">2) Bring Goldfish Home</div>
+        <p class="scene-text">You carry the fish home in a small water bowl. The evening air feels warm and quiet.</p>
+        <div class="transition-wrap">
+          <div class="walking"></div>
+          <button id="to-aquarium" class="btn">Settle Into Aquarium</button>
         </div>
-        <div class="map__frame-wrap">
-          <iframe
-            id="map-frame"
-            title="Cafe map"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=126.965%2C37.565%2C126.99%2C37.58&layer=mapnik&marker=37.5728%2C126.9794"
-          ></iframe>
+      </section>
+
+      <section id="scene-aquarium" class="scene" aria-label="Aquarium Decoration Scene">
+        <div class="scene-title">3) Aquarium Water Garden</div>
+        <div class="aquarium-layout">
+          <aside class="panel ui-fade">
+            <label for="fish-name">Name your goldfish</label>
+            <input id="fish-name" type="text" maxlength="20" placeholder="e.g. Sunny" />
+            <button id="save-name" class="btn btn-small">Save Name</button>
+            <button id="lamp-toggle" class="btn btn-small">Warm Lamp: Off</button>
+            <button id="idle-toggle" class="btn btn-small">Enter Calm Idle Mode</button>
+            <p class="helper">Tap an item, then tap aquarium to place. (Or drag icons in supported browsers.)</p>
+          </aside>
+
+          <div class="aquarium-zone">
+            <div id="aquarium" class="aquarium" aria-label="Aquarium tank">
+              <div class="water-shimmer"></div>
+              <div id="fish" class="fish"></div>
+              <div id="bubbles" class="bubbles"></div>
+            </div>
+            <div id="inventory" class="inventory ui-fade" aria-label="Decoration inventory"></div>
+          </div>
         </div>
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
